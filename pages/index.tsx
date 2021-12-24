@@ -15,11 +15,6 @@ const Home: NextPage = () => {
   const [followers, setFollowers] = useState<Follower[]>([])
   const [username, setUsername] = useState<string>("")
   
-  async function submit (){
-    const res = await fetch('/api/profile')
-    const profiles: Follower[] = await res.json()
-    setFollowers(profiles);
-  }
   const handleSearch = async (event: FormEvent) => {
     event.preventDefault()
 
@@ -54,7 +49,7 @@ const Home: NextPage = () => {
         <form onSubmit={handleSearch}>
 
         <input placeholder="@user.name" onChange={e => setUsername((e.target.value))} className="p-0.5 text-zinc-800 mx-2"></input>
-        <button onClick={()=> submit()} className="bg-zinc-400 px-4 py-1 rounded-full">Enviar</button>
+        <button type='submit' className="bg-zinc-400 px-4 py-1 rounded-full">Enviar</button>
         </form>
         <div className="mx-auto w-3/4 bg-gray-200 grid grid-cols-6">
         {followers.map((f,index)=>
