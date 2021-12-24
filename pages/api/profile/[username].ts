@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { IgApiClient, AccountFollowersFeedResponseUsersItem } from 'instagram-private-api'
 
-import { PrismaClient, Profile } from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
