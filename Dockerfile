@@ -6,6 +6,7 @@ RUN apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev li
 
 RUN mkdir -p /usr/src/app
 ENV PORT 3000
+ENV NODE_ENV production
 
 WORKDIR /usr/src/app
 
