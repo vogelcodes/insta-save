@@ -28,8 +28,6 @@ ENV NODE_ENV=production
 COPY package.json /usr/src/app
 COPY yarn.lock /usr/src/app
 
-RUN yarn install --production
-
 COPY --from=build /usr/src/app /usr/src/app  
 
 
