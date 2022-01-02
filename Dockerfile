@@ -20,7 +20,7 @@ RUN yarn install --production
 
 COPY . /home/node/app
 
-RUN yarn build
+RUN yarn build --production
 
 EXPOSE 3000
 CMD [ "yarn", "start" ]
