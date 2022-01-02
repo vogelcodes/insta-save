@@ -17,6 +17,7 @@ RUN yarn install
 
 COPY . /usr/src/app
 
+RUN prisma generate
 
 RUN yarn build
 
