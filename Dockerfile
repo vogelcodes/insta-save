@@ -15,6 +15,8 @@ COPY yarn.lock /usr/src/app
 
 RUN yarn install
 
+RUN yarn install -g @prisma/cli
+
 COPY . /usr/src/app
 
 RUN prisma generate
