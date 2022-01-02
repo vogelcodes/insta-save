@@ -8,13 +8,11 @@ USER node
 RUN mkdir -p /home/node/app
 ENV PORT 3000
 
-WORKDIR /home/node/app
 
 COPY package.json /home/node/app
 COPY yarn.lock /home/node/app
 
 # Production use node instead of root
-USER node
 
 RUN yarn install
 
@@ -25,13 +23,15 @@ RUN yarn build
 
 FROM node:16-alpine
 
+USER node
+WORKDIR /home/node/app
 ENV NODE_ENV=production
 
 COPY package.json /home/node/app
 COPY yarn.lock /home/node/app
 
 
-COPY --from=build /home/node/app app  
+COPY --from=build /home/node/app /home/node/app  
 
 
 EXPOSE 3000
