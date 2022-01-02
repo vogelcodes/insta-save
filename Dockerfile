@@ -15,11 +15,11 @@ COPY yarn.lock /usr/src/app
 
 RUN yarn install
 
-RUN yarn global add @prisma/cli
+RUN yarn add prisma --dev
 
 COPY . /usr/src/app
 
-RUN prisma generate
+RUN yarn prisma generate
 
 RUN yarn build
 
