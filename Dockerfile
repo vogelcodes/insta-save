@@ -10,6 +10,8 @@ COPY package.json /home/node/app
 # Production use node instead of root
 USER node
 
+ RUN sudo chmod -R 777 /home/node
+
 RUN npm install
 
 COPY . /home/node/app
