@@ -12,7 +12,7 @@ COPY package.json /home/node/app
 COPY yarn.lock /home/node/app
 
 
-COPY ./.next/ /home/node/app/
+COPY . /home/node/app/
 
 EXPOSE 3000
 CMD [ "yarn", "start" ]
