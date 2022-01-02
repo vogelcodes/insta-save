@@ -13,7 +13,7 @@ COPY package.json /home/node/app
 # Production use node instead of root
 
 
-RUN npm install
+RUN npm install --only=prod
 
 COPY . /home/node/app
 
