@@ -2,9 +2,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { IgApiClient, AccountFollowersFeedResponseUsersItem } from 'instagram-private-api'
 
-import { PrismaClient } from '@prisma/client'
+// import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient()
+// const prisma = new PrismaClient()
 
 const ig = new IgApiClient();
 ig.state.generateDevice("acer-i7");
@@ -45,6 +45,6 @@ while (followFeed.isMoreAvailable()) {
 // console.log(allFollowers)
 
 
-  const profiles = await prisma.profile.findMany()
+  // const profiles = await prisma.profile.findMany()
   res.status(200).json(allFollowers)
 }
