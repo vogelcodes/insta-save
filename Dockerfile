@@ -22,16 +22,15 @@ RUN yarn build
 
 FROM node:16-alpine
 
-USER node
-WORKDIR /home/node/app
+WORKDIR /usr/src/app
 ENV NODE_ENV=production
 
-COPY package.json /home/node/app
-COPY yarn.lock /home/node/app
+COPY package.json /usr/src/app
+COPY yarn.lock /usr/src/app
 
 RUN yarn install --production
 
-COPY --from=build /usr/src/app /home/node/app  
+COPY --from=build /usr/src/app /usr/src/app  
 
 
 EXPOSE 3000
