@@ -1,18 +1,18 @@
 FROM node:alpine
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /home/node/app
 ENV PORT 3000
 
-WORKDIR /usr/src/app
+WORKDIR /home/node/app
 
-COPY package.json /usr/src/app
+COPY package.json /home/node/app
 
 # Production use node instead of root
 USER node
 
 RUN npm install
 
-COPY . /usr/src/app
+COPY . /home/node/app
 
 RUN npm run build
 
