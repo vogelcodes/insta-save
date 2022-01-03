@@ -19,7 +19,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const { username } = req.query;
-  await ig.simulate.preLoginFlow();
+  // await ig.simulate.preLoginFlow();
 const loggedInUser = await ig.account.login(process.env.USERNAME || "" ,process.env.PASSWORD || "");
 // The same as preLoginFlow()
 // Optionally wrap it to process.nextTick so we dont need to wait ending of this bunch of requests
